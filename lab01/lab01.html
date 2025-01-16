@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lab 01</title>
+        <style>
+            body {background-color: #E38E49;}
+            b {color: #E38E49;}
+            h1 {color: #0a3981;}
+            #main {background-color: #d4ebf8; padding: 10px; border-radius: 5px;}
+            .invisible {
+                width: 800px;
+                margin: 0 auto;
+            }
+            .flex-container {
+                display: flex;
+                justify-content:center; /*cutting off my face*/
+            }
+            .container1 {
+                flex:1;
+                justify-content: center;
+            }
+            .container2 {
+                flex:1;
+                justify-content: center;
+            }
+            img {
+                /*max-width: 800px;
+                max-height: 780px;*/
+                width: 100%;
+                height: 100%;
+            }
+            #writing {
+                justify-content: center;
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div class="invisible">
+                <div id="writing">
+                <h1>Alexandra Miller-Thomas</h1>
+                <p>Something <b>personal</b> about me is that I was born in Kazakhstan. <b>Professionally</b> I am currently studying Applied Data Analytics with an internship lined up as an app developer. Lastly, a <b>peculiar</b> fact is that both of my shoulders are double jointed. </p>
+                
+                </div>
+                <div class="flex-container">
+                    <div class="container1">
+                        <div id="image" class="image1"><img src="headshot.jpg" alt="Headshot of Alexandra"></div>
+                        <div id="image" class="image2"><img src="kazakh-flag1.jpg" alt="Kazakh Flag"></div>
+                    </div>
+                    <div class="container2">
+                        <div id="image" class="image3"><img src="data-cartoon1.jpg" alt="Data Analytics Cartoon"></div>
+                        <div id="image" class="image4"><img src="shoulder1.jpg" alt="Cartoon Shoulder"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
