@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyframes - 1/21</title>
+    <style>
+        img {
+            position: absolute;
+            left: -200px;
+        }
+        .otto {
+            animation-name: otto;
+            animation-duration: 5s;
+            animation-fill-mode: backwards;
+            animation-iteration-count: infinite;
+        }
+        @keyframes otto {
+            from {tranfsorm: translateX(-200px)}
+            to {transform: translateX(1500px)}
+        }
+        /*WATCH FOR SPELLING ERRORS!!!!!*/
+    </style>
+</head>
+<body>
+    <div>
+        <img class="otto" src="https://laferger.github.io/ist363/images/otto-on-skateboard.png" alt="otto on skateboard">
+
+    </div>
+</body>
+</html>

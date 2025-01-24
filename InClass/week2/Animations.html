@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations - 1/21</title>
+    <style>
+        .circle {
+            background-color: lightblue;
+            text-align: center;
+            transition: 1s;
+            border-radius: 100px;
+            width: 100px;
+            height: 100px;
+            margin: auto; /*Centers the circle*/
+        }
+        .circle:hover {
+            background-color: darkblue;
+            transform: rotate(360deg);
+            color: white;
+        }
+        p {
+            text-align: center; /*Centers the text*/
+            padding-top: 35px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="circle">
+        <div>
+            <p> Go Orange!</p>
+        </div>
+    </div>
+</body>
+</html>
