@@ -1,11 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 02</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lab 01 - Corrections</title>
+        <style>
+            body {background-color: #E38E49;}
+            b {color: #E38E49;}
+            h1 {
+                color: #0a3981;
+                animation-name: name;
+                animation-duration: 5s;
+                top: -100px;
+            }
+            @keyframes name {
+                0% {transform: translateY(-100px)}
+                25% {transform: translateY(0px)}
+                50% {transform: translateY(0) rotateY(720deg)}
+                75% {transform: translateY(0) scale(2)}
+                100% {transform: translateY(0) scale(1)}
+            }
+            .container {
+                background-color: #d4ebf8;
+                padding: 20px; 
+                border-radius: 10px;
+                margin: 20px;
+                padding: 1% 10%;
+            }
+            .images {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            .images div {
+                flex: 1;
+            }
+            img {
+                width: 100%;
+                min-width: 250px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <main class="container">
+                <h1>Alexandra Miller-Thomas</h1>
+                <p>Something <b>personal</b> about me is that I was born in Kazakhstan. <b>Professionally</b> I am currently studying Applied Data Analytics with an internship lined up as an app developer. Lastly, a <b>peculiar</b> fact is that both of my shoulders are double jointed. </p>
+                
+                <div class="images">
+                    <div><img src="../lab01/headshot.jpg" alt="Headshot of Alexandra"></div>
+                    <div><img src="../lab01/kazakh-flag1.jpg" alt="Kazakh Flag"></div>
+                </div>
+                <div class="images">
+                    <div><img src="../lab01/data-cartoon1.jpg" alt="Data Analytics Cartoon"></div>
+                    <div><img src="../lab01/shoulder1.jpg" alt="Cartoon Shoulder"></div>
+                </div>
+        </main>
+    </body>
 </html>
