@@ -1,0 +1,67 @@
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/extends";
+@import "partials/reset";
+
+
+//NAV DESIGN
+nav {
+    background-color: $button_background; 
+    color: $nav_font;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    a {color: $nav_font;}
+}
+h1 {padding-bottom: 15px; font-size: 30px;}
+
+
+
+//LATEST RECIPES DESIGN
+#image_container {
+    @extend .container-basic;
+    max-width: 200px;
+    img {max-width: 100%;}
+}
+
+
+
+
+//NEWSLETTER DESIGN
+.newsletter {
+    @include shadow;
+    background-color: $form_background;
+    padding-top: 35px;
+    padding-bottom: 25px;
+    border-radius: 5px;
+    margin: 25px 0px;
+    img {padding-bottom: 15px;}
+}
+form {padding-top: 10px;}
+input {
+    border: 1px solid $button_background;
+    width: 175px;
+    font-size: 10px;
+    height: 15px;
+}
+button {@include button_style;}
+
+
+//ABOUT US DESIGN
+.about_image {
+    border-radius: 5px;
+}
+
+
+
+//OLDER RECIPES DESIGN
+
+
+
+
+//FOOTER
+footer {background-color: $footer_background;}
+
+
+
+.button {@include button_style;}
+

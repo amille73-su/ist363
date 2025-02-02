@@ -1,0 +1,22 @@
+@mixin button_style {
+    border-radius: 2px;
+    background-color: $button_background;
+    width: 75px;
+    color: $nav_font;
+    border: 1px;
+    font-size: 12px;
+    padding: 3px;
+}
+
+@mixin flexbox-style {
+    margin: 10px;
+    padding: 5px;
+}
+
+@mixin h2-style {
+    color: $main_text;
+}
+
+@mixin shadow {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}

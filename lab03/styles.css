@@ -1,0 +1,181 @@
+.container-basic, #image_container {
+  text-align: center;
+  color: #e2625c;
+  border-radius: 5px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/*
+        html5doctor.com Reset Stylesheet
+        v1.6.1
+        Last Updated: 2010-09-17
+        Author: Richard Clark - http://richclarkdesign.com
+        Twitter: @rich_clark
+        */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+nav {
+  background-color: #e89b6a;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+nav a {
+  color: white;
+}
+
+h1 {
+  padding-bottom: 15px;
+  font-size: 30px;
+}
+
+#image_container {
+  max-width: 200px;
+}
+#image_container img {
+  max-width: 100%;
+}
+
+.newsletter {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #e4fdc3;
+  padding-top: 35px;
+  padding-bottom: 25px;
+  border-radius: 5px;
+  margin: 25px 0px;
+}
+.newsletter img {
+  padding-bottom: 15px;
+}
+
+form {
+  padding-top: 10px;
+}
+
+input {
+  border: 1px solid #e89b6a;
+  width: 175px;
+  font-size: 10px;
+  height: 15px;
+}
+
+button {
+  border-radius: 2px;
+  background-color: #e89b6a;
+  width: 75px;
+  color: white;
+  border: 1px;
+  font-size: 12px;
+  padding: 3px;
+}
+
+.about_image {
+  border-radius: 5px;
+}
+
+footer {
+  background-color: #8ae2c8;
+}
+
+.button {
+  border-radius: 2px;
+  background-color: #e89b6a;
+  width: 75px;
+  color: white;
+  border: 1px;
+  font-size: 12px;
+  padding: 3px;
+}/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,6 @@
+.container-basic {
+    text-align: center;
+    color: $main_text;
+    border-radius: 5px;
+    @include shadow;
+}
