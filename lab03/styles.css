@@ -146,6 +146,10 @@ h1 {
   flex-wrap: wrap;
 }
 
+.older {
+  padding-bottom: 20px;
+}
+
 @media only screen and (max-width: 600px) {
   #image_container {
     max-width: 400px;
@@ -214,11 +218,15 @@ button {
 
 .about button {
   padding: 5px;
-  margin: 10px;
+  margin: 20px;
 }
 
 .about {
   text-align: center;
+  padding: 20px;
+}
+.about h2 {
+  margin-bottom: 20px;
 }
 
 footer {
