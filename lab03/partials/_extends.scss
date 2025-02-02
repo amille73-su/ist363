@@ -1,6 +1,7 @@
 .container-basic {
     text-align: center;
     color: $main_text;
-    border-radius: 5px;
+    border-radius: 10px;
     @include shadow;
+    margin-top: 10px;
 }

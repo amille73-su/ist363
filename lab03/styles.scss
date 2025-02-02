@@ -4,6 +4,18 @@
 @import "partials/reset";
 
 
+//GENERAL STYLES
+h2 {
+    font-size: 20px;
+    color: $main_text;
+    margin: 10px;
+}
+body{font-family: sans-serif;}
+
+
+
+
+
 //NAV DESIGN
 nav {
     background-color: $button_background; 
@@ -16,11 +28,39 @@ h1 {padding-bottom: 15px; font-size: 30px;}
 
 
 
-//LATEST RECIPES DESIGN
+//LATEST & OLDER RECIPES DESIGN
 #image_container {
     @extend .container-basic;
-    max-width: 200px;
-    img {max-width: 100%;}
+    img {
+        max-width: 100%; 
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;;
+    }
+}
+.latest, .older {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+@media only screen and (max-width: 600px){
+    #image_container {
+        max-width: 400px;
+        p {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+}
+@media only screen and (min-width: 601px) {
+    #image_container {
+        width: 18%;
+        margin-left: 1%;
+        p {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
 }
 
 
@@ -44,24 +84,36 @@ input {
     height: 15px;
 }
 button {@include button_style;}
+.button {@include button_style;}
 
 
 //ABOUT US DESIGN
 .about_image {
     border-radius: 5px;
 }
-
-
-
-//OLDER RECIPES DESIGN
-
+.about button {
+    padding: 5px; margin: 10px;
+}
+.about {
+    text-align: center;
+}
 
 
 
 //FOOTER
-footer {background-color: $footer_background;}
+footer {
+    background-color: $footer_background;
+    text-align: center;
+    color: $nav_font;
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+footer a{
+    color: $nav_font;
+    text-decoration: none;
+}
+footer p {padding-bottom: 15px;}
 
 
 
-.button {@include button_style;}
 
