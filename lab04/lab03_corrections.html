@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 03 - Corrections</title>
+    <style>
+        /*link partials to a main styles.scss in main folder, use the css file made from that to link to html*/
+
+        main {max-width: 1000px; margin: auto;}
+        h1 {text-align: center;}
+        .nav {text-align: center;}
+        .newsletter {
+            text-align: center;
+        }
+        .about_image {max-width: 100%;}
+        .nav a:hover {color: #000000;}
+        
+    </style>
+    <link rel="stylesheet" href="../lab03/styles.css">
+</head>
+<body>
+    <nav>
+        <h1>Recipe Blog</h1>
+        <div class="nav">
+            <a href="">Home</a>
+            <a href="">Recipes</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+        </div>
+    </nav>
+    <main>
+        <div class="latest">
+            <div>
+                <h2>Latest Recipes</h2>
+            </div>
+            <div id="image_container">
+                <img src="../lab03/images/recipe1.jpg" alt="burger">
+                <p>Burger</p>
+            </div>
+            <div id="image_container">
+                <img src="../lab03/images/recipe2.jpg" alt="pancakes">
+                <p>Pancakes</p>
+            </div>
+            <div id="image_container">
+                <img src="../lab03/images/recipe3.jpg" alt="pasta">
+                <p>Pasta</p>
+            </div>
+            <div id="image_container">
+                <img src="../lab03/images/recipe4.jpg" alt="curry">
+                <p>Curry</p>
+            </div>
+        </div>
+        <div class="newsletter">
+            <img src="../lab03/images/newsletter.png" alt="newsletter logo">
+            <p>Sign up for our newsletter to get the latest recipes directly to your inbox!</p>
+            <form>
+                <label for="email"></label>
+                <input type="email" id="email" name="email" placeholder="Your email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <img class="about_image" src="../lab03/images/about.jpg" alt="cooking">
+        <div class="about">
+            <h2>About Us</h2>
+            <p>Learn more about our journey and passion for cooking.</p> 
+            <button type="">Learn More</button>
+        </div>
+        <div class="older">
+            <div>
+                <h2>Older Recipes</h2>
+            </div>
+            <div id="image_container">
+                <img src="../lab03/images/recipe5.jpg" alt="salad">
+                <p>Salad</p>
+            </div>
+            <div id="image_container">
+                <img src="../lab03/images/recipe6.jpg" alt="chops">
+                <p>Chops</p>
+            </div>
+            <div id="image_container">
+                <img src="../lab03/images/recipe7.jpg" alt="fruit">
+                <p>Fruit</p>
+            </div>
+            <div id="image_container">
+                <img src="../lab03/images/recipe8.jpg" alt="cake">
+                <p>Cake</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>
+            &copy; 2025 Recipe Blog. All rights reserved.
+        </p>
+        <a href="">Facebook</a> 
+        <a href="">Bluesky</a>
+        <a href="">Instagram</a>
+        <a href="">Privacy Policy</a>
+    </footer>
+</body>
+</html>
