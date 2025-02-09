@@ -22,24 +22,114 @@
     </style>
 </head>
 <body>
-    <header class="bg-blue-950 flex p-5">
-        <div class="text-yellow-400 mx-1">Orange</div> 
-        <div class="text-white md: space-x-20">News</div>
+    <header class="bg-indigo-950 flex p-3 md:justify-between">
+        <div class="flex">
+            <p class="text-yellow-400 mx-1 font-semibold text-xl">Orange</p>
+            <p class="text-white md: space-x-20 font-semibold text-xl">News</p>
+        </div> 
+        
         <nav class="hidden md:block md:text-white ">
-            <a href="">Home</a>
-            <a href="">Latest</a>
-            <a href="">Scores</a>
-            <a href="">Videos</a>
-            <a href="">More</a>
+            <a href="" class="md:px-2">Home</a>
+            <a href="" class="md:px-2">Latest</a>
+            <a href="" class="md:px-2">Scores</a>
+            <a href="" class="md:px-2">Videos</a>
+            <a href="" class="md:px-2">More</a>
         </nav>
     </header>
 
-    <main>
-        
+    <main >
+        <section class="">
+            <div class="rounded-lg overflow-hidden m-6">
+                <img class="w-full h-80 object-cover" src="images/campus.jpg" alt="Campus Image">
+                <div class="p-4 bg-gray-800 text-white w-full">
+                    <h2 class="font-bold text-lg">Will the Snow Ever Thaw?</h2>
+                    <p class="text-sm py-1">Get the latest scoop on the weather and everything that affects the jet stream</p>
+                </div>
+            </div>
+            
+        </section>
+
+
+        <h2 class="font-semibold text-lg mx-6 py-1 ">More Featured Stories</h2>
+        <section class="md:flex flex-wrap justify-center">
+            <div class="container w-auto md:flex-1 shadow-lg rounded mx-5 px-2 py-1 mb-2">
+                <img class="rounded " src="images/graduates.jpg" alt="graduates">
+                <h2 class="font-bold ">Graduation 2025</h2>
+                <p class="text-xs ">Invite your friends and family to join us in May</p>
+            </div>
+            <div class="container w-auto md:flex-1 shadow-lg rounded mx-5 px-2 py-1 mb-2">
+                <img class="rounded " src="images/runners.jpg" alt="graduates">
+                <h2 class="font-bold ">Workplace Run</h2>
+                <p class="text-xs ">Run a 5k with your colleagues. </p>
+            </div>
+            <div class="container w-auto md:flex-1 shadow-lg rounded mx-5 px-2 py-1 mb-2">
+                <img class="rounded " src="images/artshow.jpg" alt="graduates">
+                <h2 class="font-bold ">Art Show</h2>
+                <p class="text-xs ">The best art of the year on display at Schaffer.</p>
+            </div>
+        </section>
+
+
+        <section class="flex flex-wrap">
+            <div class="md:flex-1 mx-6 w-full">
+                <h2 class="font-semibold text-lg py-1 mt-5">Top Headlines</h2>
+                <div class=" ">
+                    <div class="container w-auto md:flex-1 shadow-lg rounded px-2 py-2">
+                        <h2 class="font-semibold py-2">Player X Breaks Record</h2>
+                        <p class="text-xs">The record-breaking performance from Player X stunned fans everywhere...</p>
+                    </div>
+                    <div class="container w-auto md:flex-1 shadow-lg rounded px-2 py-2">
+                        <h2 class="font-semibold py-2">Team Y Wins Championship</h2>
+                        <p class="text-xs">In an epic showsdown, Team Y came out on top with a historic victory...</p>
+                    </div>
+                    <div class="container w-auto md:flex-1 shadow-lg rounded px-2 py-2">
+                        <h2 class="font-semibold py-2">Athlete Z Announces Retirement</h2>
+                        <p class="text-xs">Athlete Z's retirement shocked the sports world...</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:flex-1 mx-6 md:mx-0 md:mr-6 w-full">
+                <h2 class="font-semibold text-lg py-1 mt-5">Game Scores</h2>
+                <div class="shadow-lg p-3 rounded">
+                    <div class=" flex justify-between border-b pb-2">
+                        <h3 class="text-md font-bold text-gray-800 mb-1">Game </h3>
+                        <h3 class="text-md font-bold text-gray-800 mb-1">Scores</h3>
+                    </div>
+                    <div class="space-y-1 ">
+                        <div class="pb-1 flex justify-between">
+                            <p class="text-sm text-gray-700">Women's Hockey vs Miami</p>
+                            <p class="text-gray-600">3-1</p>
+                        </div>
+                        <div class="pb-1 flex justify-between">
+                            <p class="text-sm text-gray-700">Men's Lacrosse vs St Bonaventure</p>
+                            <p class="text-gray-600">7-18</p>
+                        </div>
+                        <div class="pb-1 flex justify-between">
+                            <p class="text-sm text-gray-700">Men's Basketball vs Duke</p>
+                            <p class="text-gray-600">98-75</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section>
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg justify-center m-6">
+                <h2 class="font-semibold text-white mb-3">Subscribe to Our Newsletter</h2>
+                <p class="text-white mb-2 text-sm">Stay updated with the latest news, scores, and exclusive content delivered straight to your inbox!</p>
+                <form class="">
+                    <div>
+                        <label for="email" class="block text-sm font-medium"></label>
+                        <input type="email" id="email" name="email" class="mt-1  w-3/4 py-2 px-2 rounded-l-lg" placeholder="Enter your email" required>
+                    </div>
+                    <button type="submit" class="w-1/2 flex justify-center py-2 px-4 rounded-r-lg text-sm font-medium text-black bg-yellow-400 ">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </section>
     </main>
-
-    <footer>
-
-    </footer>
 </body>
 </html>
