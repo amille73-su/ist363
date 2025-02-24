@@ -153,6 +153,7 @@ h1 {
 @media only screen and (max-width: 600px) {
   #image_container {
     max-width: 400px;
+    margin: 0 auto;
   }
   #image_container p {
     padding-top: 10px;
