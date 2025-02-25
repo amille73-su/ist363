@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Examples</title>
+    <!-- to inclde an external file -->
+    <script src="example.js"></script>
+</head>
+<body>
+
+    <script>
+        //dog years
+        let dogAge = 14;
+        let type = "cat";
+        let petAge; //saying I am going to use this variable later
+        // you cannot declare variables inside of a function
+        // you need to define variables outside of the function before using it
+        if (type == "dog") {
+            petAge = dogAge * 7;
+        } else if (type == "cat") {
+            petAge = dogAge * 4;
+        }
+        console.log(petAge);
+    </script>
+
+    <!-- this is how you include JS internally -->
+    <script>
+        console.log("Hello World"); //comment 
+
+        let firstName = "Alexandra";
+        let age = 29;
+        let isIschool = true;
+        console.log(firstName);
+        console.log(age);
+        console.log(isIschool);
+
+        //multiplication
+        let x = 2 * 2893;
+        console.log(x);
+        console.log(1 == 2);
+        console.log(0 && 1); // && means and
+        console.log(0 || 1); // || means or
+        console.log(2<1 && 1<2); // F & T = F
+        console.log(2<1 || 1<2); // F or T = T
+        console.log(10 == 20 || 20 == 10); // F or F = F
+
+        /* let score = 85;
+        if (score >= 90) {
+            console.log("A Grade");
+        } else if (score >= 80) {
+            console.log("B Grade");
+        } else {console.log("Needs Improvement");} */
+
+
+        let gpa = 3.4;
+        if (gpa >= 3.5) {
+            console.log("You made the dean's list");
+        } else {console.log("You did not make the dean's list");}
+
+    </script>
+</body>
+</html>
