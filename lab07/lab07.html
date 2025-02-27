@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 07</title>
+</head>
+<body>
+    <script>
+        //Logging Multiple Variables
+        console.log("QUESTION 1");
+        let favNumber = 15;
+        console.log("My favorite number is" + favNumber + ".");
+
+        //Arrays
+        console.log("QUESTION 2");
+        let food = ["Tacos", "Gnocchi", "Hibachi", "Thai"];
+        console.log(food[1]); 
+        food.push("Oreos"); 
+        console.log(food);
+
+        //Looping Arrays
+        console.log("QUESTION 3");
+        for (let i = 0; i <food.length; i++) {
+            console.log("Favorite Food " + (i + 1) + ": " + food[i]);
+        }
+
+        //Filtering Arrays 
+        console.log("QUESTION 4");
+        for (let i = 0; i <food.length; i++) if (i == 1) {
+            console.log();
+        } else {
+            console.log("Favorite Food " + (i + 1) + ": " + food[i]);
+        }
+
+        //Objects
+        console.log("QUESTION 5");
+        let book = {
+            title: "The Land of Stories",
+            author: "Chris Colfer",
+            yearPublished: 2015,
+            isAvailable: true
+        };
+        console.log("The title of this book is " + book["title"] + " and the author is " + book["author"] + "."); 
+        if (book["isAvailable"] == true) {
+            console.log("This book is available for checkout.");
+        } else {
+            console.log("Sorry, this book is currently checkout out.");
+        }
+
+        //Other Kinds of Loops
+        console.log("QUESTION 6");
+        let x = 2;
+        while (x <= 20) {
+            console.log(x);
+            x++;
+            x++;
+        }
+
+        //Random Numbers
+        console.log("QUESTION 7");
+        let randomNumber = Math.floor(Math.random() * 6) + 1;
+        console.log(randomNumber);
+
+    </script>
+</body>
+</html>
