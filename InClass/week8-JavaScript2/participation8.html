@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Participation 8</title>
+</head>
+<body>
+    
+    <h1>Dog Age to Dog Years Calculator</h1>
+
+    <form id="myForm">
+        <label for="years">Enter your dogs age in human years:</label>
+        <input type="number" id="years" placeholder="Enter Age">
+        <input type="submit" value="Calculate" id="calc">
+    </form>
+
+    <p>Your dog's age in dog years is: <span id="result" ></span></p>
+
+
+    <script>
+
+        function dogYears(years) {
+            return years * 7;
+        }
+    
+        function dogAge() {
+            event.preventDefault(); //prevent form from submitting completely
+            let humanYears = document.getElementById('myForm').elements['years'].value;
+            let age = dogYears(humanYears);
+            document.getElementById('result').innerText = age;
+        }
+        
+        document.getElementById('calc').addEventListener('click', dogAge );
+
+    </script>
+
+
+</body>
+</html>

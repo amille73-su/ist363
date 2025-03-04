@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Part 2</title>
+</head>
+<body>
+
+    <p id="p1" class="odd">one</p>
+    <p class="even">two</p>
+    <p class="odd">three</p>
+
+
+    <form id="myForm">
+        <input type="text" name="fname" value="Lex">
+        <input type="text" name="lname" value="Miller-Thomas">
+        <input type="submit" value="send form">
+
+    </form>
+
+
+    <p>
+        <button id="myButton">Sign Up</button>
+    </p>
+
+    <script>
+        //functions
+        function dogYears(age) {
+            return age * 7;
+        }
+        let value = dogYears(5);
+        console.log("Dog Age = " + value);
+
+        
+        //pick something by id and console log it, returns one result
+        let picked = document.getElementById('p1'); 
+        console.log(picked);
+
+
+        //pick by class or tag, returns an array
+        let odds = document.getElementsByClassName('odd');
+        for (i = 0; i < odds.length; i++) {
+            console.log(odds[i]);
+        }
+
+        let pTags = document.getElementsByTagName('p');
+        for (i = 0; i < pTags.length; i++) {
+            console.log(pTags[i]);
+        }
+
+
+        //getting an element value from a form
+        console.log(document.getElementById('myForm').elements[0].value);
+        
+
+        //changing text and HTML in tags
+        document.getElementById('p1').innerHTML = 'four';
+
+
+        //more changing content (form and style)
+        document.getElementById('myForm').elements[0].value = 'Alexandra';
+
+        document.getElementById('p1').style.backgroundColor = 'green';
+        document.getElementById('p1').style.color = 'tan';
+        document.getElementById('p1').style.padding = '5px';
+        document.getElementById('p1').style.textDecoration = 'underline';
+        document.getElementsByTagName('body')[0].style.backgroundColor = 'skyblue';
+
+
+
+        //handling events
+        document.getElementById('myButton').addEventListener('click', myFunction);
+
+        function myFunction() {
+            alert ("Hello");
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>
