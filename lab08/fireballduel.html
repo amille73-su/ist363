@@ -22,7 +22,14 @@
         button:hover {background: #ff8000; background-image: -webkit-linear-gradient(top, #ff8000, #ff8000); background-image: -moz-linear-gradient(top, #ff8000, #ff8000); background-image: -ms-linear-gradient(top, #ff8000, #ff8000); background-image: -o-linear-gradient(top, #ff8000, #ff8000); background-image: linear-gradient(to bottom, #ff8000, #ff8000); }        
         p { font-size: 20px;font-weight: bold;text-align: center;width: 100%;}
         .animate {animation: moveRight 1s ease-in-out;}
-        @keyframes moveRight {  }
+        @keyframes moveRight {
+            0% {transform: translateX(0);}
+            100% {transform: translateX(300px);}
+        }
+        @keyframes moveLeft {
+            0% {transform: translateX(0);}
+            100% {transform: translateX(-300px);}
+        }
     </style>
 </head>
 <body>
@@ -45,65 +52,53 @@
 
         <script>
              
-             let monsterShield = 100;
+            function animateFireball() {
+                // Remove the class to reset animation
+                document.getElementById("fireballleft").classList.remove("animate");
+                document.getElementById("fireballright").classList.remove("animate");
+
+                // Use a small timeout to allow the browser to register the removal
+                setTimeout(() => {
+                    document.getElementById("fireballleft").classList.add("animate");
+                    document.getElementById("fireballright").classList.add("animate");
+                }, 10);  // Small delay ensures re-triggering
+            }
+        
+            let monsterShield = 100;
             let girlShield = 100;
 
-            function animateFireball() {
-            // Remove the class to reset animation
-            document.getElementById("fireballleft").classList.remove("animate");
-            document.getElementById("fireballright").classList.remove("animate");
-
-            setTimeout(() => {
-                document.getElementById("fireballleft").classList.add("animate");
-                document.getElementById("fireballright").classList.add("animate");
-            }, 10);  // Small delay ensures re-triggering
-        }
-
-            document.querySelector("button").addEventListener("click", playGame);
+            document.getElementById("playbutton").addEventListener('click', playGame);
 
             function playGame() {
-                // Step 4: Animate fireballs when button is clicked
                 animateFireball();
-                let monsterThrow = Math.floor(Math.random() * 20) + 1; // Random number between 1 and 20
+
+                let monsterThrow = Math.floor(Math.random() * 20) + 1; 
                 let girlThrow = Math.floor(Math.random() * 20) + 1;
-                monsterShield -= monsterThrow;
-                girlShield -= girlThrow;
+
+                monsterShield -= girlThrow;
+                girlShield -= monsterThrow;
+
+                if (monsterShield <0) {
+                    monsterShield = 0;
+                }
+                if (girlShield <0) {
+                    girlShield = 0;
+                }
+
                 document.getElementById("mscore").innerText = monsterShield;
                 document.getElementById("gscore").innerText = girlShield;
-                if (monsterShield <= 0 && girlShield <= 0) {
-                    // Both lost
-                    setTimeout(() => alert("Both lost!"), 1000);
-                    endGame();
-                } else if (monsterShield <= 0) {
-                    // Monster lost
-                    setTimeout(() => alert("Monster lost!"), 1000);
-                    endGame();
-                } else if (girlShield <= 0) {
-                    // Girl lost
-                    setTimeout(() => alert("Girl lost!"), 1000);
-                    endGame();
+
+                if (monsterShield == 0 && girlShield == 0) {
+                    document.getElementById('playbutton').innerText = "Both Lost";
+                } else if (monsterShield == 0) {
+                    document.getElementById('playbutton').innerText = "Girl Wins!";
+                } else if (girlShield == 0) {
+                    document.getElementById('playbutton').innerText = "Monster Wins";
                 }
             }
 
-            function endGame() {
-            document.querySelector("button").disabled = true; // Disable the button
-            document.querySelector("button").innerText = "Game Over"; // Change button text
-        }
-
-            function animateFireball() {
-
-            // Remove the class to reset animation
-            document.getElementById("fireballleft").classList.remove("animate");
-            document.getElementById("fireballright").classList.remove("animate");
-
-            // Use a small timeout to allow the browser to register the removal
-            setTimeout(() => {
-                document.getElementById("fireballleft").classList.add("animate");
-                document.getElementById("fireballright").classList.add("animate");
-            }, 10);  // Small delay ensures re-triggering
-        }
-
+            
+            
         </script>
-        
 </body>
 </html>
