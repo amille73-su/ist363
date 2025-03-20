@@ -14,7 +14,9 @@ function displayWeather(response) {
         let cloudEmoji = cloudCover >= 50 ? '☁️' : '☀️';
         document.getElementById('cloud').innerHTML = cloudEmoji;
     } else {
-        document.getElementById('temp').innerHTML = "Error loading weather data";
+        document.getElementById('temp').innerHTML = "Error";
+        document.getElementById('precip').innerHTML = 'Error';
+        document.getElementById('cloud').innerHTML = "Error";
     }
 }
 
