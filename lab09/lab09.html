@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 09</title>
+</head>
+<body>
+    <!-- class="bg-orange-500 text-white m-3 p-3 br-2" --> 
+    <div>
+        <h1>Current Weather</h1>
+        <p>Precipitation: <span id="precip"></span>"</p>
+        <p>Temperature : <span id="temp"></span>F</p>
+    </div>
+
+
+    <script>
+        // STEP 4 - Use the Data
+        function reportResults(response) {
+            let browserData = '';
+            if (response != 'error') {
+                const myData = JSON.parse(response);
+                for (i=0; i< myData.length; i++) {
+                    browserData = browserData + myData[i] + '<br>';
+                }
+            }
+            document.getElementById('precip').innerHTML = browserData;
+        }
+
+        let endpoint = 'https://api.open-meteo.com/v1/forecast?latitude=43.0481&longitude=-76.1474&current=temperature_2m,precipitation,cloud_cover&forecast_days=1&wind_speed_unit=mph&temperature_unit=fahrenheit&precipitation_unit=inch'
+
+        // STEP 1 - Make a Request Object 
+        const request = new XMLHttpRequest();
+
+        // STEP 2 - Check the Status of Request
+        request.addEventListener('readystatechange', () => { 
+            if (request.readyState === 4 && request.status === 200) {
+                reportResults(request.responseText);
+            } else if (request.readyState === 4) {
+                reportResults('error');
+            }
+        })
+        
+        // STEP 3 - Open Endpoint and Send Request
+        request.open('GET', endpoint);
+        request.send();
+
+    </script>
+
+</body>
+</html>
