@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2</title>
+</head>
+<body>
+    <h1>Movie Information</h1>
+    <select id="movieSelect">
+        <option value="">-- Select a Movie --</option>
+        <option value="Aladdin">Aladdin</option>
+        <option value="Alien">Alien</option>
+        <option value="Avengers">Avengers</option>
+        <option value="Casablanca">Casablanca</option>
+        <option value="Cinema Paradiso">Cinema Paradiso</option>
+        <option value="Dune">Dune</option>
+        <option value="Everything Everywhere All at Once">Everything Everywhere All at Once</option>
+        <option value="Finding Nemo">Finding Nemo</option>
+        <option value="Forrest Gump">Forrest Gump</option>
+        <option value="Frozen">Frozen</option>
+        <option value="Get Out">Get Out</option>
+        <option value="Gone with the Wind">Gone with the Wind</option>
+        <option value="Inception">Inception</option>
+        <option value="Indiana Jones and the Raiders of the Lost Ark">Raiders of the Lost Ark</option>
+        <option value="Jurassic Park">Jurassic Park</option>
+        <option value="La La Land">La La Land</option>
+        <option value="Mad Max: Fury Road">Mad Max: Fury Road</option>
+        <option value="Monty Python and the Holy Grail">Monty Python and the Holy Grail</option>
+        <option value="Notting Hill">Notting Hill</option>
+        <option value="Parasite">Parasite</option>
+        <option value="Pretty Woman">Pretty Woman</option>
+        <option value="Pulp Fiction">Pulp Fiction</option>
+        <option value="Raiders of the Lost Ark">Raiders of the Lost Ark</option>
+        <option value="Romeo + Juliet">Romeo + Juliet</option>
+        <option value="Schindler's List">Schindler's List</option>
+        <option value="Shrek">Shrek</option>
+        <option value="Spirited Away">Spirited Away</option>
+        <option value="Star Wars">Star Wars: Episode IV</option>
+        <option value="Superbad">Superbad</option>
+        <option value="The Dark Knight">The Dark Knight</option>
+        <option value="The Godfather">The Godfather</option>
+        <option value="The Grand Budapest Hotel">The Grand Budapest Hotel</option>
+        <option value="The Lion King">The Lion King</option>
+        <option value="The Matrix">The Matrix</option>
+        <option value="The Notebook">The Notebook</option>
+        <option value="The Shawshank Redemption">The Shawshank Redemption</option>
+        <option value="The Silence of the Lambs">The Silence of the Lambs</option>
+        <option value="The Social Network">The Social Network</option>
+        <option value="Titanic">Titanic</option>
+        <option value="Toy Story">Toy Story</option>
+        <option value="Star Wars">Star Wars: Episode IV</option>
+    </select>
+    <button onclick="getMovieData()">Get Info</button>
+
+    <p><strong>The movie you chose is:</strong> <span id="title">Title</span> (<span id="year">Year</span>), rated <span id="rating">___</span></p>
+    <p><strong>This movie is about:</strong> <span id="plot"></span></p>
+    <p><strong>More detailed reviews:</strong> <br><span id="detailedRatings"></span></p>
+
+    <script>
+        // Function to display movie data
+        function displayMovieData(response) {
+            if (response !== 'error') {
+                const movieData = JSON.parse(response);
+                
+                // Update the DOM with movie data
+                document.getElementById('title').innerHTML = movieData.Title || "-";
+                document.getElementById('year').innerHTML = movieData.Year || "-";
+                document.getElementById('plot').innerHTML = movieData.Plot || "-";
+                document.getElementById('rating').innerHTML = movieData.Rated || "-";
+    
+            } else {
+                document.getElementById('title').innerHTML = "Error loading movie data";
+            }
+        }
+
+        // Function to get detailed ratings (IMDb and Rotten Tomatoes) using IMDb ID
+        function getDetailedRatings(imdbId) {
+            const xhr2 = new XMLHttpRequest();
+
+            xhr2.addEventListener('readystatechange', function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    const ratingsData = JSON.parse(this.responseText);
+                    
+                    // Update detailed ratings in the DOM
+                    const imdbRating = ratingsData.ratings.imdb.score || 'N/A';
+                    const rottenTomatoesRating = ratingsData.ratings.rotten_tomatoes.tomatometer || 'N/A';
+                    
+                    document.getElementById('detailedRatings').innerHTML = `
+                        IMDb Rating: ${imdbRating}<br>
+                        Rotten Tomatoes Rating: ${rottenTomatoesRating}
+                    `;
+                } else if (this.readyState === 4) {
+                    console.error('Error fetching detailed ratings:', this.statusText);
+                }
+            });
+
+            // Second API endpoint to get IMDb and Rotten Tomatoes ratings (use your API URL here)
+            const ratingsEndpoint = `https://movies-ratings2.p.rapidapi.com/ratings?id=${ratingsData.imdbId}`;
+            xhr2.open('GET', ratingsEndpoint);
+            xhr2.setRequestHeader('x-rapidapi-key', 'b3ad7f21afmsh284b4f37ad35180p152a4ejsnd936d5d98cf5');
+            xhr2.setRequestHeader('x-rapidapi-host', 'movies-ratings2.p.rapidapi.com');
+            xhr2.send();
+        }
+    
+        // Function to get movie data based on selected movie
+        function getMovieData() {
+            const selectedMovie = document.getElementById('movieSelect').value;
+    
+            // Check if a movie is selected
+            if (!selectedMovie) {
+                alert("Please select a movie first!");
+                return;
+            }
+    
+            // API endpoint for movie data
+            const endpoint = 'https://www.omdbapi.com/?t=' + encodeURIComponent(selectedMovie) + '&apikey=3b39687';
+    
+            // STEP 1 - Create a Request Object
+            const request = new XMLHttpRequest();
+    
+            // STEP 2 - Check the Status of the Request
+            request.addEventListener('readystatechange', () => {
+                if (request.readyState === 4 && request.status === 200) {
+                    displayMovieData(request.responseText);
+                } else if (request.readyState === 4) {
+                    displayMovieData('error');
+                }
+            });
+    
+            // STEP 3 - Open the Endpoint and Send the Request
+            request.open('GET', endpoint);
+            request.send();
+        }
+    </script>    
+</body>
+</html>
