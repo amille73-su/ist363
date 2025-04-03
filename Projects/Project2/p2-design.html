@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p2 element design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="bg-indigo-950 flex p-3 md:justify-between">
+        <div class="flex">
+            <p class="text-yellow-400 mx-1 font-semibold text-xl">Movie</p>
+            <p class="text-white md: space-x-20 font-semibold text-xl">Information</p>
+        </div> 
+        
+        <nav class="hidden md:block md:text-white ">
+            <a href="" class="md:px-2">Home</a>
+            <a href="" class="md:px-2">Movies</a>
+            <a href="" class="md:px-2">Series</a>
+            <a href="" class="md:px-2">More</a>
+        </nav>
+    </header>
+
+    <main>
+        <select id="movieSelect">
+            <option value="">-- Select a Movie --</option>
+            <option value="tt0103639">Aladdin</option>
+            <option value="tt0078748">Alien</option>
+            <option value="tt0848228">Avengers</option>
+            <option value="tt0034583">Casablanca</option>
+            <option value="tt0095765">Cinema Paradiso</option>
+            <option value="tt0087182">Dune</option>
+            <option value="tt6710474">Everything Everywhere All at Once</option>
+            <option value="tt0266543">Finding Nemo</option>
+            <option value="tt0109830">Forrest Gump</option>
+            <option value="tt2294629">Frozen</option>
+            <option value="tt5052448">Get Out</option>
+            <option value="tt0031381">Gone with the Wind</option>
+            <option value="tt1375666">Inception</option>
+            <option value="tt0107290">Jurassic Park</option>
+            <option value="tt3783958">La La Land</option>
+            <option value="tt1392190">Mad Max: Fury Road</option>
+            <option value="tt0071853">Monty Python and the Holy Grail</option>
+            <option value="tt0125439">Notting Hill</option>
+            <option value="tt6751668">Parasite</option>
+            <option value="tt0100405">Pretty Woman</option>
+            <option value="tt0110912">Pulp Fiction</option>
+            <option value="tt0082971">Raiders of the Lost Ark</option>
+            <option value="tt0117509">Romeo + Juliet</option>
+            <option value="tt0108052">Schindler's List</option>
+            <option value="tt0126029">Shrek</option>
+            <option value="tt0245429">Spirited Away</option>
+            <option value="tt0076759">Star Wars: Episode IV</option>
+            <option value="tt0829482">Superbad</option>
+            <option value="tt0468569">The Dark Knight</option>
+            <option value="tt0068646">The Godfather</option>
+            <option value="tt2278388">The Grand Budapest Hotel</option>
+            <option value="tt0110357">The Lion King</option>
+            <option value="tt0133093">The Matrix</option>
+            <option value="tt0332280">The Notebook</option>
+            <option value="tt0111161">The Shawshank Redemption</option>
+            <option value="tt0102926">The Silence of the Lambs</option>
+            <option value="tt1285016">The Social Network</option>
+            <option value="tt0120338">Titanic</option>
+            <option value="tt0114709">Toy Story</option>
+        </select>
+        <button onclick="getMovieData()" class="">Get Info</button>
+    
+        <section>
+            <p><strong>The movie you chose is:</strong> <span id="title">Title</span> (<span id="year">Year</span>), rated <span id="rating">___</span></p>
+            <p><strong>This movie is about:</strong> <span id="plot"></span></p>
+            <p><strong>More detailed reviews:</strong> <br><span id="detailedRatings"></span></p>
+        </section>
+
+        <div class="flex-1 pr-4">
+            <section class="mb-6">
+                <div class="rounded-lg overflow-hidden">
+                    <img class="w-full h-80 object-cover" src="images/campus.jpg" alt="Campus Image">
+                    <div class="p-4 bg-gray-800 text-white w-full">
+                        <h2 class="font-bold text-lg">Will the Snow Ever Thaw?</h2>
+                        <p class="text-sm py-1">Get the latest scoop on the weather and everything that affects the jet stream</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="w-full">
+            <section class="relative overflow-hidden">
+                <!-- Radio Buttons (Hidden) -->
+                <input type="radio" id="slide1" name="carousel" class="hidden peer" checked>
+                <input type="radio" id="slide2" name="carousel" class="hidden peer">
+                <input type="radio" id="slide3" name="carousel" class="hidden peer">
+              
+                <div class="flex transition-transform duration-500 ease-in-out">
+                    <div class="w-full peer-checked:translate-x-0">
+                        <img src="images/Aladdin.jpg" alt="Image 1" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="w-full peer-checked:translate-x-0">
+                        <img src="images/avatar.jpg" alt="Image 2" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="w-full peer-checked:translate-x-0">
+                        <img src="images/ET.jpg" alt="Image 3" class="w-full h-64 object-cover">
+                    </div>
+                </div>
+              
+                <!-- Navigation Dots -->
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <label for="slide1" class="w-3 h-3 rounded-full bg-gray-500 cursor-pointer transition duration-300 hover:bg-gray-700"></label>
+                    <label for="slide2" class="w-3 h-3 rounded-full bg-gray-500 cursor-pointer transition duration-300 hover:bg-gray-700"></label>
+                    <label for="slide3" class="w-3 h-3 rounded-full bg-gray-500 cursor-pointer transition duration-300 hover:bg-gray-700"></label>
+                </div>
+            </section>
+        </div>
+
+    </main>
+    
+    
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2 - Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes slide {
+            0%, 25% { transform: translateX(0); }
+            33%, 58% { transform: translateX(-100%); }
+            66%, 91% { transform: translateX(-200%); }
+            100% { transform: translateX(-300%); }
+        }
+        .animate-slide {
+            animation: slide 20s infinite;
+            width: 100%; /* 4 slides = 400% */
+        }
+    </style>
+</head>
+<body class="bg-neutral-700">
+    <header class="bg-black flex p-3 md:justify-between">
+        <div class="flex">
+            <p class="text-amber-400 mx-1 font-semibold text-xl">Movie</p>
+            <p class="text-white md: space-x-20 font-semibold text-xl">Verse</p>
+        </div> 
+        
+        <nav class="hidden md:block md:text-white">
+            <a href="" class="md:px-2 hover:text-neutral-400">Home</a>
+            <a href="" class="md:px-2 hover:text-neutral-400">Movies</a>
+            <a href="" class="md:px-2 hover:text-neutral-400">Series</a>
+            <a href="" class="md:px-2 hover:text-neutral-400">More</a>
+        </nav>
+    </header>
+
+    <section id="selectors" class="container bg-neutral-600 text-white mx-auto p-3 my-3 rounded">
+        <h1 class="text-3xl pb-5 text-center font-bold">Movie Information</h1>
+        <p class="pb-5 text-lg text-center">We love movies! Do you? <br>To learn more about your favorite movies, select an option below!</p>
+        <div class="text-center p-2">
+            <select id="movieSelect" class="border-1 bg-neutral-500 rounded ">
+                <option value="" class="text-center">-- Select a Movie --</option>
+                <option value="tt0103639">Aladdin</option>
+                <option value="tt0078748">Alien</option>
+                <option value="tt0848228">Avengers</option>
+                <option value="tt0034583">Casablanca</option>
+                <option value="tt0095765">Cinema Paradiso</option>
+                <option value="tt0087182">Dune</option>
+                <option value="tt6710474">Everything Everywhere All at Once</option>
+                <option value="tt0266543">Finding Nemo</option>
+                <option value="tt0109830">Forrest Gump</option>
+                <option value="tt2294629">Frozen</option>
+                <option value="tt5052448">Get Out</option>
+                <option value="tt0031381">Gone with the Wind</option>
+                <option value="tt1375666">Inception</option>
+                <option value="tt0107290">Jurassic Park</option>
+                <option value="tt3783958">La La Land</option>
+                <option value="tt1392190">Mad Max: Fury Road</option>
+                <option value="tt0071853">Monty Python and the Holy Grail</option>
+                <option value="tt0125439">Notting Hill</option>
+                <option value="tt6751668">Parasite</option>
+                <option value="tt0100405">Pretty Woman</option>
+                <option value="tt0110912">Pulp Fiction</option>
+                <option value="tt0082971">Raiders of the Lost Ark</option>
+                <option value="tt0117509">Romeo + Juliet</option>
+                <option value="tt0108052">Schindler's List</option>
+                <option value="tt0126029">Shrek</option>
+                <option value="tt0245429">Spirited Away</option>
+                <option value="tt0076759">Star Wars: Episode IV</option>
+                <option value="tt0829482">Superbad</option>
+                <option value="tt0468569">The Dark Knight</option>
+                <option value="tt0068646">The Godfather</option>
+                <option value="tt2278388">The Grand Budapest Hotel</option>
+                <option value="tt0110357">The Lion King</option>
+                <option value="tt0133093">The Matrix</option>
+                <option value="tt0332280">The Notebook</option>
+                <option value="tt0111161">The Shawshank Redemption</option>
+                <option value="tt0102926">The Silence of the Lambs</option>
+                <option value="tt1285016">The Social Network</option>
+                <option value="tt0120338">Titanic</option>
+                <option value="tt0114709">Toy Story</option>
+            </select>
+            <button onclick="getMovieData()" class="px-2 mx-1 border rounded bg-neutral-500">Get Info</button>    
+        </div>
+    </section>
+
+    <section class="container bg-neutral-600 mx-auto rounded p-5 my-5 text-neutral-300">
+        <p><strong>The movie you chose is:</strong> <span id="title">Title</span> (<span id="year">Year</span>), rated <span id="rating">---</span></p>
+        <p><strong>This movie is about:</strong> <span id="plot">---</span></p>
+        <p><strong>Movie Scores:</strong> <br><span id="detailedRatings">--- <br> ---</span></p>
+    </section>
+
+
+    <section class="container mx-auto py-12 px-4">
+        <div class="relative w-full max-w-lg mx-auto overflow-hidden rounded-lg shadow-xl">
+            <div class="flex animate-slide">
+                <div class="w-full flex-shrink-0">
+                    <img src="images/Aladdin.jpg" 
+                         alt="Slide 1" 
+                         class="w-full h-auto">
+                </div>
+                <div class="w-full flex-shrink-0">
+                    <img src="images/avatar.jpg" 
+                         alt="Slide 2" 
+                         class="w-full h-auto">
+                </div>
+                <div class="w-full flex-shrink-0">
+                    <img src="images/ET.jpg" 
+                         alt="Slide 3" 
+                         class="w-full h-auto">
+                </div>
+                <div class="w-full flex-shrink-0">
+                    <img src="images/Godfather.jpg" 
+                         alt="Slide 4" 
+                         class="w-full h-auto">
+                </div>
+                <div class="w-full flex-shrink-0">
+                    <img src="images/HomeAlone.jpg" 
+                         alt="Slide 5" 
+                         class="w-full h-auto">
+                </div>
+                <div class="w-full flex-shrink-0">
+                    <img src="images/IndianaJones.jpg" 
+                         alt="Slide 6" 
+                         class="w-full h-auto">
+                </div>
+                <div class="w-full flex-shrink-0">
+                    <img src="images/JAWS.jpg" 
+                         alt="Slide 7" 
+                         class="w-full h-auto">
+                </div>
+                <div class="w-full flex-shrink-0">
+                    <img src="images/JurassicPark.jpg" 
+                         alt="Slide 8" 
+                         class="w-full h-auto">
+                </div>
+                <div class="w-full flex-shrink-0">
+                    <img src="images/ROCKY.jpg" 
+                         alt="Slide 9" 
+                         class="w-full h-auto">
+                </div>
+                <div class="w-full flex-shrink-0">
+                    <img src="images/StarWars.jpg" 
+                         alt="Slide 10" 
+                         class="w-full h-auto">
+                </div>
+
+                <div class="w-full flex-shrink-0">
+                    <img src="images/Aladdin.jpg" 
+                         alt="Slide 1" 
+                         class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
