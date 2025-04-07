@@ -1,41 +1,80 @@
-import { useState } from "react";
-
-const students = [
-  {suid: 123456, name: 'Sue Flay', year: 'senior', major: 'Applied Data Analytics'}, 
-  {suid: 234567, name: 'Ella Vader', year: 'junior', major: 'Information Management and Technology'}, 
-  {suid: 345678, name: 'Chris P Bacon', year: 'junior', major: 'Innovation, Society and Technology'}
-];
+import { useState } from 'react';
 
 function App() {
-  let [filteredStudents, setFilteredStudents] = useState(students);
-   
-  const handleChange = (event) => {
-    setFilteredStudents(
-      students.filter(student => 
-        student.name.toLowerCase().includes(event.target.value.toLowerCase())
-      )
-    );}
+  // Initial state with two todo items
+  const [todos, setTodos] = useState([
+    { id: 1, text: 'Complete Lab 11', completed: false },
+    { id: 2, text: 'Review JSX Events and State', completed: false }
+  ]);
   
+  // State for the new todo input
+  const [newTodo, setNewTodo] = useState('');
+
+  // Function to toggle todo completion status
+  const toggleTodo = (id) => {
+    setTodos(todos.map(todo => 
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    ));
+  };
+
+  // Function to add a new todo
+  const addTodo = (e) => {
+    e.preventDefault();
+    if (newTodo.trim() === '') return;
+    
+    const newId = todos.length > 0 ? Math.max(...todos.map(todo => todo.id)) + 1 : 1;
+    
+    setTodos([
+      ...todos,
+      {
+        id: newId,
+        text: newTodo,
+        completed: false
+      }
+    ]);
+    
+    setNewTodo('');
+  };
+
   return (
-  <div>
-    <label htmlFor="search">Search: </label>
-    <input id="search" type="text" onChange={handleChange} />
-    <h1>Students</h1>
-    <ul>
-  {filteredStudents.map(function (item) {
-    return (
-      <li key={item.suid}>
-        Name: {item.name}
-        <br />
-        Year: {item.year}
-        <br />
-        Major: {item.major}
-      </li>
-    );
-  })}
-</ul>
-  </div>
-      );
-    };  
+    <div>
+      <h1>To-Do List</h1>
+
+      {/* Add new todo form */}
+      <form onSubmit={addTodo}>
+        <input
+          type="text"
+          value={newTodo}
+          onChange={(e) => setNewTodo(e.target.value)}
+          placeholder="Add a new task"
+        />
+        <button 
+          type="submit"
+        >
+          Add Task
+        </button>
+      </form>
+      
+      {/* Todo list */}
+      <ul>
+        {todos.map(todo => (
+          <li key={todo.id}
+          style = {{
+            textDecoration: todo.completed ? 'line-through' : 'none',
+          }}
+          >            
+          <span>{todo.text}</span>
+            <button 
+              onClick={() => toggleTodo(todo.id)}
+              style={{color: 'red'}}
+            >
+              X
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export default App;
