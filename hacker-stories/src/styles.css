@@ -1,0 +1,28 @@
+.image-container {
+    height: 200px;
+  }
+  
+  @media (min-width: 576px) {
+    .image-container {
+      height: 300px;
+  }
+  }
+  
+  @media (min-width: 768px) {
+    .image-container {
+      height: 400px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .image-container {
+      height: 500px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .image-container {
+      height: 600px;
+    }
+  }
+  

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Recipe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        input[name="carousel"] {
+          display: none;
+        }
+      </style>
+</head>
+<body class="bg-[#FDE4CE] font-mono">
+    <header class="bg-[#D22701] border-b ">
+        <nav class="max-w-6xl mx-auto px-4 py-3">
+          <div class="flex justify-between items-center">
+            <!-- Brand -->
+            <div class="text-2xl font-bold">
+              <span class="text-[#FDE4CE] ">From My Oven To Yours</span>
+            </div>
+      
+            <!-- Mobile toggle with details/summary -->
+            <details class="relative md:hidden">
+              <summary class="cursor-pointer text-white list-none">
+                <!-- Hamburger Icon -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+                     viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </summary>
+              <div class="absolute right-0 mt-2 w-48 rounded shadow-lg flex flex-col space-y-2 p-4 z-50">
+                <a href="home.html" class="text-[#FDE4CE] hover:text-[#AAD15f]">Home</a>
+                <a href="post.html" class="text-[#FDE4CE] hover:text-[#AAD15f]">Post</a>
+                <a href="review.html" class="text-[#FDE4CE] hover:text-[#AAD15f]">Review</a>
+              </div>
+            </details>
+      
+            <!-- Desktop nav -->
+            <div class="hidden md:flex space-x-6">
+              <a href="home.html" class="text-[#FDE4CE] hover:text-[#AAD15f]">Home</a>
+              <a href="post.html" class="text-[#FDE4CE] hover:text-[#AAD15f]">Post</a>
+              <a href="review.html" class="text-[#FDE4CE] hover:text-[#AAD15f]">Review</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+      
+      
+      
+
+    <main class="text-[#4E070C]">
+        <section class="container bg-[#AAD15f] rounded m-3 p-3">
+                <div>
+                  <label for="title" class="block text-lg font-semibold mb-1">Recipe Title</label>
+                  <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-300"
+                    placeholder="e.g. Lemon Garlic Pasta"
+                  />
+                </div>
+              
+                <!-- Author Name -->
+                <div>
+                  <label for="author" class="block text-lg font-semibold mb-1">Author</label>
+                  <input
+                    type="text"
+                    id="author"
+                    name="author"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-300"
+                    placeholder="e.g. Jane Doe"
+                  />
+                </div>
+              
+                <!-- Ingredient List -->
+                <div>
+                  <label for="ingredients" class="block text-lg font-semibold mb-1">Ingredients</label>
+                  <textarea
+                    id="ingredients"
+                    name="ingredients"
+                    rows="4"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-300"
+                    placeholder="List each ingredient on a new line..."
+                  ></textarea>
+                </div>
+              
+                <!-- Instructions -->
+                <div>
+                  <label for="instructions" class="block text-lg font-semibold mb-1">Instructions</label>
+                  <textarea
+                    id="instructions"
+                    name="instructions"
+                    rows="6"
+                    class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+                    placeholder="Step-by-step instructions for your recipe..."
+                  ></textarea>
+                </div>
+              
+                <!-- Submit Button -->
+                <button
+                  type="submit"
+                  class="bg-[#FF670E] hover:bg-[#D22701] text-[#FDE4CE] px-4 py-2 rounded transition"
+                >
+                  Submit Recipe
+                </button>
+                            
+        </section>
+
+
+        <section class="">
+
+        </section>
+
+
+        <section class="container m-2 mx-auto p-3 h-full">
+            <div class="max-w-3xl mx-auto">
+                <!-- Radio Inputs -->
+                <div class="relative overflow-hidden rounded-lg shadow-lg">
+                  <div class="flex w-[900%] transition-transform duration-500 ease-in-out"
+                       style="transform: translateX(var(--translate));">
+            
+                    <!-- Slides -->
+                    <img src="images/recipe1.jpg" class="w-full" />
+                    <img src="images/recipe2.jpg" class="w-full" />
+                    <img src="images/recipe3.jpg" class="w-full" />
+                    <img src="images/recipe4.jpg" class="w-full" />
+                    <img src="images/recipe5.jpg" class="w-full" />
+                    <img src="images/recipe6.jpg" class="w-full" />
+                    <img src="images/recipe7.jpg" class="w-full" />
+                    <img src="images/recipe8.jpg" class="w-full" />
+                    <img src="images/recipe9.jpg" class="w-full" />
+                  </div>
+                </div>
+            
+                <!-- Navigation dots (manual) -->
+                <div class="flex justify-center gap-2 mt-4">
+                  <label class="cursor-pointer">
+                    <input type="radio" name="carousel" checked onclick="document.documentElement.style.setProperty('--translate', '0%')">
+                    <span class="block w-3 h-3 bg-purple-400 rounded-full hover:bg-purple-600"></span>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="carousel" onclick="document.documentElement.style.setProperty('--translate', '-11.11%')">
+                    <span class="block w-3 h-3 bg-purple-400 rounded-full hover:bg-purple-600"></span>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="carousel" onclick="document.documentElement.style.setProperty('--translate', '-22.22%')">
+                    <span class="block w-3 h-3 bg-purple-400 rounded-full hover:bg-purple-600"></span>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="carousel" onclick="document.documentElement.style.setProperty('--translate', '-33.33%')">
+                    <span class="block w-3 h-3 bg-purple-400 rounded-full hover:bg-purple-600"></span>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="carousel" onclick="document.documentElement.style.setProperty('--translate', '-44.44%')">
+                    <span class="block w-3 h-3 bg-purple-400 rounded-full hover:bg-purple-600"></span>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="carousel" onclick="document.documentElement.style.setProperty('--translate', '-55.55%')">
+                    <span class="block w-3 h-3 bg-purple-400 rounded-full hover:bg-purple-600"></span>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="carousel" onclick="document.documentElement.style.setProperty('--translate', '-66.66%')">
+                    <span class="block w-3 h-3 bg-purple-400 rounded-full hover:bg-purple-600"></span>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="carousel" onclick="document.documentElement.style.setProperty('--translate', '-77.77%')">
+                    <span class="block w-3 h-3 bg-purple-400 rounded-full hover:bg-purple-600"></span>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="carousel" onclick="document.documentElement.style.setProperty('--translate', '-88.88%')">
+                    <span class="block w-3 h-3 bg-purple-400 rounded-full hover:bg-purple-600"></span>
+                  </label>
+
+                  <!-- Add 6 more like above for images 4–9 -->
+                </div>
+              </div>
+        </section>
+    </main>
+
+    <footer class="">
+
+    </footer>
+    
+</body>
+</html>
